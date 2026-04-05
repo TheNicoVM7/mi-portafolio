@@ -1,0 +1,72 @@
+---
+import HeroButtons from "./HeroButtons";
+import AnimateOnScroll from "./AnimateOnScroll";
+---
+
+<section class="hero-section" id="inicio">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <AnimateOnScroll delay={0.1} client:load>
+                    <p
+                        class="text-uppercase fw-semibold mb-3"
+                        style="color: #6366f1; letter-spacing: 3px;"
+                    >
+                        Bienvenido a mi portafolio
+                    </p>
+                </AnimateOnScroll>
+
+                <AnimateOnScroll delay={0.2} client:load>
+                    <h1 class="hero-title text-theme mb-4">
+                        Hola, soy<br />
+                        <span class="hero-gradient-text">Nicolás Vidal</span>
+                    </h1>
+                </AnimateOnScroll>
+
+                <AnimateOnScroll delay={0.3} client:load>
+                    <p
+                        class="lead text-theme-muted mb-5"
+                        style="max-width: 500px;"
+                    >
+                        Desarrollador Full Stack apasionado por crear
+                        experiencias web modernas, accesibles y con alto
+                        rendimiento.
+                    </p>
+                </AnimateOnScroll>
+
+                <AnimateOnScroll delay={0.4} client:load>
+                    <HeroButtons client:load />
+                </AnimateOnScroll>
+            </div>
+
+            <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                <AnimateOnScroll direction="zoom" delay={0.3} client:load>
+                    <div
+                        style="
+              width: 320px;
+              height: 320px;
+              border-radius: 50%;
+              background: linear-gradient(135deg, #6366f1, #06b6d4);
+              padding: 4px;
+            "
+                    >
+                        <img
+                            src="/images/MiFotoFondoBlanco.webp"
+                            alt="Foto de perfil de Nicolás Vidal"
+                            width="320"
+                            height="320"
+                            style="
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center 65%;;
+                display: block;
+              "
+                        />
+                    </div>
+                </AnimateOnScroll>
+            </div>
+        </div>
+    </div>
+</section>

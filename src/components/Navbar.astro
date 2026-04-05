@@ -1,0 +1,68 @@
+---
+import ThemeToggle from "./ThemeToggle";
+---
+
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+        <a
+            class="navbar-brand fw-bold"
+            href="#"
+            style="color: var(--text-primary);"
+        >
+            &lt;NicolásVidal /&gt;
+        </a>
+        <button
+            class="navbar-toggler border-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto gap-2">
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#sobre-mi"
+                        style="color: var(--text-muted);">Sobre mí</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#habilidades"
+                        style="color: var(--text-muted);">Habilidades</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="#proyectos"
+                        style="color: var(--text-muted);">Proyectos</a
+                    >
+                </li>
+            </ul>
+
+            <!-- Links sociales + Toggle -->
+            <div class="d-flex align-items-center gap-3 ms-3">
+                <a
+                    href="https://github.com/TheNicoVM7"
+                    target="_blank"
+                    style="color: var(--text-muted); font-size: 1.2rem;"
+                >
+                    <i class="bi bi-github"></i>
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/nicolas-vidal/"
+                    target="_blank"
+                    style="color: var(--text-muted); font-size: 1.2rem;"
+                >
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <ThemeToggle client:load />
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,148 @@
+:root {
+    --color-primary: #0d6efd;
+    --color-dark: #0f172a;
+    --color-light: #f8fafc;
+    --color-accent: #6366f1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Tema oscuro (default) */
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-card: rgba(255, 255, 255, 0.04);
+    --bg-card-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #f8fafc;
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --navbar-bg: rgba(15, 23, 42, 0.95);
+    --hero-bg: radial-gradient(ellipse at top, #1e1b4b 0%, #0f172a 70%);
+    --footer-border: rgba(255, 255, 255, 0.08);
+    --skill-badge-bg: rgba(99, 102, 241, 0.15);
+    --skill-badge-border: rgba(99, 102, 241, 0.3);
+    --skill-badge-color: #a5b4fc;
+    --skill-badge-hover-bg: rgba(99, 102, 241, 0.3);
+    --skill-badge-hover-color: white;
+}
+
+/* Tema claro */
+[data-theme="light"] {
+    --bg-primary: #f1f5f9;
+    --bg-card: rgba(0, 0, 0, 0.03);
+    --bg-card-border: rgba(0, 0, 0, 0.1);
+    --text-primary: #0f172a;
+    --text-muted: rgba(0, 0, 0, 0.55);
+    --navbar-bg: rgba(241, 245, 249, 0.95);
+    --hero-bg: radial-gradient(ellipse at top, #e0e7ff 0%, #f1f5f9 70%);
+    --footer-border: rgba(0, 0, 0, 0.08);
+    --skill-badge-bg: rgba(99, 102, 241, 0.1);
+    --skill-badge-border: rgba(99, 102, 241, 0.25);
+    --skill-badge-color: #4f46e5;
+    --skill-badge-hover-bg: rgba(99, 102, 241, 0.2);
+    --skill-badge-hover-color: #3730a3;
+}
+
+/* Transición suave al cambiar tema
+   — excluye transform y opacity para no interferir con Motion */
+*,
+*::before,
+*::after {
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Clases de texto que respetan el tema */
+.text-theme {
+    color: var(--text-primary) !important;
+}
+
+.text-theme-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Navbar personalizada */
+.navbar-custom {
+    background: var(--navbar-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--bg-card-border);
+}
+
+/* Sección hero */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--hero-bg);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-gradient-text {
+    background: linear-gradient(135deg, #6366f1, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Cards de proyectos */
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-accent);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+/* Skills badges */
+.skill-badge {
+    background: var(--skill-badge-bg);
+    border: 1px solid var(--skill-badge-border);
+    color: var(--skill-badge-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.skill-badge:hover {
+    background: var(--skill-badge-hover-bg);
+    color: var(--skill-badge-hover-color);
+}
+
+/* Secciones */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #6366f1, #06b6d4);
+    border-radius: 2px;
+    margin: 0 auto 3rem;
+}

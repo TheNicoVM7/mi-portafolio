@@ -1,17 +1,29 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Nicolás Vidal | Desarrollador Full Stack">
+	<Navbar />
+	<Hero />
+	<About />
+	<Skills />
+	<Projects client:load />
+	<WhatsAppButton />
+
+	<footer
+		class="text-center py-4"
+		style="border-top: 1px solid var(--bg-card-border); color: var(--text-muted);"
+	>
+		<small
+			>Hecho con ❤️ usando Astro + React · {
+				new Date().getFullYear()
+			}</small
+		>
+	</footer>
+</Layout>

@@ -1,0 +1,19 @@
+---
+import SkillIcons from "./SkillIcons";
+import AnimateOnScroll from "./AnimateOnScroll";
+---
+
+<section id="habilidades">
+    <div class="container">
+        <AnimateOnScroll client:load>
+            <div class="text-center">
+                <h2 class="section-title text-theme">Habilidades</h2>
+                <div class="section-divider"></div>
+            </div>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll delay={0.2} client:load>
+            <SkillIcons client:load />
+        </AnimateOnScroll>
+    </div>
+</section>
