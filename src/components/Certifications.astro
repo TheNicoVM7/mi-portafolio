@@ -31,8 +31,6 @@ const certifications = [
 
 <section id="certificaciones">
   <div class="container">
-    
-    <!-- Título -->
     <AnimateOnScroll client:load>
       <div class="text-center">
         <h2 class="section-title text-theme">Certificaciones</h2>
@@ -40,72 +38,61 @@ const certifications = [
       </div>
     </AnimateOnScroll>
 
-    <!-- Cards -->
     <div class="row g-4 justify-content-center">
-      {certifications.map((cert, index) => (
-        <div class="col-md-6 col-lg-4">
-          <AnimateOnScroll delay={index * 0.15} client:load>
-            
-            <div class="cert-card p-4 rounded-4 h-100">
-              <div class="d-flex align-items-start gap-3">
+      {
+        certifications.map((cert, index) => (
+          <div class="col-md-6 col-lg-4">
+            <AnimateOnScroll delay={index * 0.15} client:load>
+              <div class="cert-card p-4 rounded-4 h-100">
+                <div class="d-flex align-items-start gap-3">
+                  <div class="cert-icon">{cert.icon}</div>
 
-                <!-- Icono -->
-                <div class="cert-icon">
-                  {cert.icon}
-                </div>
+                  <div class="flex-grow-1">
+                    <h6 class="text-theme fw-bold mb-1">{cert.name}</h6>
 
-                <!-- Contenido -->
-                <div class="flex-grow-1">
-                  <h6 class="text-theme fw-bold mb-1">
-                    {cert.name}
-                  </h6>
+                    <p
+                      class="mb-1 fw-semibold"
+                      style="color: #6366f1; font-size: 0.85rem;"
+                    >
+                      {cert.institution}
+                    </p>
 
-                  <p
-                    class="mb-1 fw-semibold"
-                    style="color: #6366f1; font-size: 0.85rem;"
-                  >
-                    {cert.institution}
-                  </p>
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                      <small class="text-theme-muted">📅 {cert.year}</small>
 
-                  <div class="d-flex align-items-center gap-2 mb-3">
-                    <small class="text-theme-muted">
-                      {cert.year}
-                    </small>
-                    <small class="text-theme-muted">·</small>
-                    <small class="text-theme-muted">
-                      {cert.location}
-                    </small>
+                      <small class="text-theme-muted">·</small>
+
+                      <small class="text-theme-muted">📍 {cert.location}</small>
+                    </div>
+
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn btn-sm rounded-pill px-3 cert-btn"
+                    >
+                      Ver certificado →
+                    </a>
                   </div>
-
-                  <!-- Botón -->
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-sm rounded-pill px-3"
-                    style="
-                      background: rgba(99,102,241,0.15);
-                      color: #a5b4fc;
-                      border: 1px solid rgba(99,102,241,0.3);
-                      font-size: 0.8rem;
-                    "
-                  >
-                    Ver certificado →
-                  </a>
                 </div>
-
               </div>
-            </div>
-
-          </AnimateOnScroll>
-        </div>
-      ))}
+            </AnimateOnScroll>
+          </div>
+        ))
+      }
     </div>
-
   </div>
 </section>
 
 <style>
+  :global([data-theme="dark"]) {
+    --cert-btn-color: #a5b4fc;
+  }
+
+  :global([data-theme="light"]) {
+    --cert-btn-color: #4338ca;
+  }
+
   .cert-card {
     background: var(--bg-card);
     border: 1px solid var(--bg-card-border);
@@ -119,7 +106,6 @@ const certifications = [
   }
 
   .cert-icon {
-    font-size: 2rem;
     min-width: 48px;
     height: 48px;
     display: flex;
@@ -127,5 +113,19 @@ const certifications = [
     justify-content: center;
     background: rgba(99, 102, 241, 0.1);
     border-radius: 12px;
+    font-size: 2rem;
+  }
+
+  .cert-btn {
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--cert-btn-color);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+  }
+
+  .cert-btn:hover {
+    background: rgba(99, 102, 241, 0.3);
+    color: var(--cert-btn-color);
   }
 </style>
