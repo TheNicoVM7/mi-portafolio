@@ -26,7 +26,7 @@ export default function HeroButtons() {
             </a>
 
             <a
-                href="/CV_Nicolás_Vidal_2026.pdf"
+                href="/CV.pdf"
                 download="CV-NicolásVidal.pdf"
                 className="btn btn-lg px-4 rounded-pill d-flex align-items-center gap-2"
                 style={{
