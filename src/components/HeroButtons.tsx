@@ -1,10 +1,4 @@
-import { FaWhatsapp, FaDownload } from "react-icons/fa";
-
-/* const phone = "56912345678";
-const message = encodeURIComponent(
-    "Hola, vi tu portafolio y me gustaría contactarte"
-);
-const waUrl = `https://wa.me/${phone}?text=${message}`; */
+import { FaDownload, FaLinkedin } from "react-icons/fa";
 
 export default function HeroButtons() {
     return (
@@ -16,8 +10,8 @@ export default function HeroButtons() {
                 Ver experiencia
             </a>
 
-            {/* <a
-                href={waUrl}
+            <a
+                href="https://www.linkedin.com/in/nicolas-vidal/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-lg px-4 rounded-pill d-flex align-items-center gap-2"
@@ -27,9 +21,9 @@ export default function HeroButtons() {
                     background: "transparent",
                 }}
             >
-                <FaWhatsapp size={20} color="#25d366" />
-                Contáctame
-            </a> */}
+                <FaLinkedin size={20} color="#0a66c2" />
+                LinkedIn
+            </a>
 
             <a
                 href="/CV_Nicolás_Vidal_2026.pdf"
