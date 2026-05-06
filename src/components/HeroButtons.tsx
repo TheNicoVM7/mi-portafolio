@@ -1,22 +1,22 @@
 import { FaWhatsapp, FaDownload } from "react-icons/fa";
 
-const phone = "56912345678";
+/* const phone = "56912345678";
 const message = encodeURIComponent(
     "Hola, vi tu portafolio y me gustaría contactarte"
 );
-const waUrl = `https://wa.me/${phone}?text=${message}`;
+const waUrl = `https://wa.me/${phone}?text=${message}`; */
 
 export default function HeroButtons() {
     return (
         <div className="d-flex gap-3 flex-wrap">
             <a
-                href="#proyectos"
+                href="#experiencia"
                 className="btn btn-primary btn-lg px-4 rounded-pill"
             >
-                Ver proyectos
+                Ver experiencia
             </a>
 
-            <a
+            {/* <a
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -29,7 +29,7 @@ export default function HeroButtons() {
             >
                 <FaWhatsapp size={20} color="#25d366" />
                 Contáctame
-            </a>
+            </a> */}
 
             <a
                 href="/CV_Nicolás_Vidal_2026.pdf"

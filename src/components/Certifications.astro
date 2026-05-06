@@ -1,0 +1,131 @@
+---
+import AnimateOnScroll from "./AnimateOnScroll";
+
+const certifications = [
+  {
+    name: "Microsoft: Azure AI Fundamentals",
+    institution: "Pontificia Universidad Católica de Chile",
+    year: "2024",
+    location: "Santiago, Chile",
+    link: "https://www.credly.com/badges/fc5662e3-bbb5-4735-a118-5d767d47288d/public_url",
+    icon: "☁️",
+  },
+  {
+    name: "Fundamentos de Python 1",
+    institution: "Cisco Networking Academy",
+    year: "2026",
+    location: "Santiago, Chile",
+    link: "https://www.credly.com/badges/f50d6613-f320-4fe0-8a82-84c401ad619f/public_url",
+    icon: "🐍",
+  },
+  {
+    name: "Fundamentos de Python 2",
+    institution: "Cisco Networking Academy",
+    year: "2026",
+    location: "Santiago, Chile",
+    link: "https://www.credly.com/badges/f50d6613-f320-4fe0-8a82-84c401ad619f/public_url",
+    icon: "🐍",
+  },
+];
+---
+
+<section id="certificaciones">
+  <div class="container">
+    
+    <!-- Título -->
+    <AnimateOnScroll client:load>
+      <div class="text-center">
+        <h2 class="section-title text-theme">Certificaciones</h2>
+        <div class="section-divider"></div>
+      </div>
+    </AnimateOnScroll>
+
+    <!-- Cards -->
+    <div class="row g-4 justify-content-center">
+      {certifications.map((cert, index) => (
+        <div class="col-md-6 col-lg-4">
+          <AnimateOnScroll delay={index * 0.15} client:load>
+            
+            <div class="cert-card p-4 rounded-4 h-100">
+              <div class="d-flex align-items-start gap-3">
+
+                <!-- Icono -->
+                <div class="cert-icon">
+                  {cert.icon}
+                </div>
+
+                <!-- Contenido -->
+                <div class="flex-grow-1">
+                  <h6 class="text-theme fw-bold mb-1">
+                    {cert.name}
+                  </h6>
+
+                  <p
+                    class="mb-1 fw-semibold"
+                    style="color: #6366f1; font-size: 0.85rem;"
+                  >
+                    {cert.institution}
+                  </p>
+
+                  <div class="d-flex align-items-center gap-2 mb-3">
+                    <small class="text-theme-muted">
+                      {cert.year}
+                    </small>
+                    <small class="text-theme-muted">·</small>
+                    <small class="text-theme-muted">
+                      {cert.location}
+                    </small>
+                  </div>
+
+                  <!-- Botón -->
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-sm rounded-pill px-3"
+                    style="
+                      background: rgba(99,102,241,0.15);
+                      color: #a5b4fc;
+                      border: 1px solid rgba(99,102,241,0.3);
+                      font-size: 0.8rem;
+                    "
+                  >
+                    Ver certificado →
+                  </a>
+                </div>
+
+              </div>
+            </div>
+
+          </AnimateOnScroll>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-card-border);
+    transition: all 0.3s ease;
+  }
+
+  .cert-card:hover {
+    border-color: #6366f1;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+  }
+
+  .cert-icon {
+    font-size: 2rem;
+    min-width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+  }
+</style>

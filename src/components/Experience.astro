@@ -1,0 +1,145 @@
+---
+import AnimateOnScroll from "./AnimateOnScroll";
+
+const experiences = [
+  {
+    company: "Pontificia Universidad Católica de Chile",
+    role: "Consultor de Transformación Digital",
+    period: "Junio 2024 - Diciembre 2025",
+    location: "Santiago, Chile",
+    current: false,
+    tags: ["React", "Node.js", "Express", "OracleDB", "JWT", "Docker", "Figma"],
+    responsibilities: [
+      "Participé activamente en reuniones funcionales con usuarios clave para el levantamiento, análisis y documentación detallada de requerimientos de negocio.",
+      "Diseñé prototipos de interfaces (mockups) en Figma, mejorando la experiencia de usuario (UX) y validando flujos antes del desarrollo.",
+      "Elaboré documentación funcional y técnica (especificación de requerimientos, historias de usuario y planes de prueba), asegurando trazabilidad y calidad en las entregas.",
+      "Desarrollé el Frontend de aplicaciones web con React, implementando manejo de estado, consumo de APIs REST y autenticación JWT con protección de rutas.",
+      "Desarrollé el Backend con Node.js (Express), construyendo APIs REST integradas con OracleDB, middleware de validación y contenedorización con Docker.",
+    ],
+  },
+  {
+    company: "Pontificia Universidad Católica de Chile",
+    role: "Consultor de Nivelación Digital",
+    period: "Mayo 2024 - Junio 2024",
+    location: "Santiago, Chile",
+    current: false,
+    tags: ["Power Apps", "Power Automate", "Microsoft 365"],
+    responsibilities: [
+      "Desarrollé aplicaciones empresariales con Power Apps, diseñando formularios dinámicos, validaciones y lógica de negocio personalizada.",
+      "Implementé flujos automatizados en Power Automate con disparadores, condiciones y aprobaciones, optimizando procesos internos.",
+      "Integré soluciones con servicios del ecosistema Microsoft 365, asegurando consistencia y trazabilidad de la información.",
+    ],
+  },
+];
+---
+
+<section id="experiencia">
+  <div class="container">
+    <AnimateOnScroll client:load>
+      <div class="text-center">
+        <h2 class="section-title text-theme">Experiencia</h2>
+        <div class="section-divider"></div>
+      </div>
+    </AnimateOnScroll>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="timeline">
+          {experiences.map((exp, index) => (
+            <AnimateOnScroll delay={index * 0.2} client:load>
+              <div class="timeline-item">
+                <!-- Punto y línea -->
+                <div class="timeline-marker">
+                  <div class={`timeline-dot ${exp.current ? 'timeline-dot--active' : ''}`}></div>
+                </div>
+
+                <!-- Contenido -->
+                <div class="timeline-content p-4 rounded-4 mb-4" style="background: var(--bg-card); border: 1px solid var(--bg-card-border);">
+
+                  <!-- Header -->
+                  <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-3">
+                    <div>
+                      <h5 class="text-theme fw-bold mb-1">{exp.role}</h5>
+                      <p class="mb-0 fw-semibold" style="color: #6366f1;">{exp.company}</p>
+                    </div>
+                    <div class="text-end">
+                      {exp.current && (
+                        <span class="badge rounded-pill mb-1 d-block" style="background: rgba(99,102,241,0.15); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3);">
+                          Actual
+                        </span>
+                      )}
+                      <small class="text-theme-muted d-block">{exp.period}</small>
+                      <small class="text-theme-muted">{exp.location}</small>
+                    </div>
+                  </div>
+
+                  <!-- Responsabilidades -->
+                  <ul class="mb-3" style="padding-left: 1.2rem;">
+                    {exp.responsibilities.map((item) => (
+                      <li class="text-theme-muted mb-2" style="font-size: 0.9rem;">{item}</li>
+                    ))}
+                  </ul>
+
+                  <!-- Tags -->
+                  <div class="d-flex flex-wrap gap-2">
+                    {exp.tags.map((tag) => (
+                      <span class="skill-badge" style="font-size: 0.75rem;">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #6366f1, #06b6d4);
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 1.2rem;
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid #6366f1;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-dot--active {
+    background: #6366f1;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+  }
+
+  .timeline-content:hover {
+    border-color: #6366f1 !important;
+    transform: translateX(4px);
+    transition: all 0.3s ease;
+  }
+</style>

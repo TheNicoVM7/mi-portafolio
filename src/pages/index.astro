@@ -4,8 +4,9 @@ import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
-import Projects from "../components/Projects";
-import WhatsAppButton from "../components/WhatsAppButton.astro";
+import Certifications from "../components/Certifications.astro";
+import Experience from "../components/Experience.astro";
+// import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
 <Layout title="Nicolás Vidal | Desarrollador Full Stack">
@@ -13,8 +14,9 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 	<Hero />
 	<About />
 	<Skills />
-	<Projects client:load />
-	<WhatsAppButton />
+	<Certifications />
+	<Experience />
+	<!-- <WhatsAppButton /> -->
 
 	<footer
 		class="text-center py-4"

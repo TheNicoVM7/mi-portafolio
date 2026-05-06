@@ -4,6 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 
 <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container">
+        <!-- Logo -->
         <a
             class="navbar-brand fw-bold"
             href="#"
@@ -11,8 +12,10 @@ import ThemeToggle from "./ThemeToggle";
         >
             &lt;NicolásVidal /&gt;
         </a>
+
+        <!-- Botón móvil -->
         <button
-            class="navbar-toggler border-secondary"
+            class="navbar-toggler border-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -20,47 +23,77 @@ import ThemeToggle from "./ThemeToggle";
         >
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Contenido colapsable -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto gap-2">
+            <!-- Links de navegación -->
+            <ul class="navbar-nav ms-auto gap-1">
                 <li class="nav-item">
                     <a
-                        class="nav-link"
+                        class="nav-link px-3"
                         href="#sobre-mi"
-                        style="color: var(--text-muted);">Sobre mí</a
+                        style="color: var(--text-muted);"
                     >
+                        Sobre mí
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a
-                        class="nav-link"
+                        class="nav-link px-3"
                         href="#habilidades"
-                        style="color: var(--text-muted);">Habilidades</a
+                        style="color: var(--text-muted);"
+                    >
+                        Habilidades
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link px-3"
+                        href="#certificaciones"
+                        style="color: var(--text-muted);">Certificaciones</a
                     >
                 </li>
                 <li class="nav-item">
                     <a
-                        class="nav-link"
-                        href="#proyectos"
-                        style="color: var(--text-muted);">Proyectos</a
+                        class="nav-link px-3"
+                        href="#experiencia"
+                        style="color: var(--text-muted);">Experiencia</a
                     >
                 </li>
             </ul>
 
-            <!-- Links sociales + Toggle -->
-            <div class="d-flex align-items-center gap-3 ms-3">
+            <!-- Social + Toggle -->
+            <div class="d-flex align-items-center gap-3 ms-3 mobile-social">
+                <!-- Divisor -->
+                <div
+                    class="vr d-none d-lg-block"
+                    style="opacity: 0.15; height: 24px;"
+                >
+                </div>
+
+                <!-- GitHub -->
                 <a
-                    href="https://github.com/TheNicoVM7"
+                    href="https://github.com/tu-usuario"
                     target="_blank"
-                    style="color: var(--text-muted); font-size: 1.2rem;"
+                    style="color: var(--text-muted); font-size: 1.2rem; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--text-primary)'"
+                    onmouseout="this.style.color='var(--text-muted)'"
                 >
                     <i class="bi bi-github"></i>
                 </a>
+
+                <!-- LinkedIn -->
                 <a
-                    href="https://www.linkedin.com/in/nicolas-vidal/"
+                    href="https://linkedin.com/in/tu-usuario"
                     target="_blank"
-                    style="color: var(--text-muted); font-size: 1.2rem;"
+                    style="color: var(--text-muted); font-size: 1.2rem; transition: color 0.2s;"
+                    onmouseover="this.style.color='var(--text-primary)'"
+                    onmouseout="this.style.color='var(--text-muted)'"
                 >
                     <i class="bi bi-linkedin"></i>
                 </a>
+
+                <!-- Theme toggle -->
                 <ThemeToggle client:load />
             </div>
         </div>
